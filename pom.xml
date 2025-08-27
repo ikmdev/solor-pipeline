@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.ikm.tinkar.data</groupId>
+    <artifactId>SOLOR</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>SOLOR Pipeline</name>
+
+    <modules>
+        <module>solor-transformation</module>
+        <module>solor-reasoner</module>
+        <module>solor-export</module>
+    </modules>
+
+    <properties>
+        <!-- maven plugins -->
+        <maven-artifacts.version>1.35.0</maven-artifacts.version>
+        <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+
+        <!-- starter data -->
+        <tinkar-starter-data.groupId>dev.ikm.data.tinkar</tinkar-starter-data.groupId>
+        <tinkar-starter-data.artifactId>tinkar-starter-data</tinkar-starter-data.artifactId>
+        <tinkar-starter-data.classifier>unreasoned-pb</tinkar-starter-data.classifier>
+        <tinkar-starter-data.version>20250813</tinkar-starter-data.version>
+        <!-- reasoner options (ElkOwlReasoner, ElkSnomedReasoner, HybridReasoner)-->
+        <reasoner-type>ElkSnomedReasoner</reasoner-type>
+
+        <!-- origin -->
+        <snomed.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</snomed.origin.namespace>
+        <loinc.origin.namespace>7b880c4c-8e54-5625-863c-c8504fa78243</loinc.origin.namespace>
+        <rxnorm.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</rxnorm.origin.namespace>
+
+        <!-- TODO RxNorm data should be packaged in origin zip -->
+        <rxnorm.starterSetLocation>${user.home}/Downloads</rxnorm.starterSetLocation>
+        <rxnorm.starterSet>RxNorm Starter Export 07072025.zip</rxnorm.starterSet>
+        <rxnormOwl>${user.home}/Downloads/Pilot-Defined-RxNorm-with-SNCT-classes-2024-04-10-with-custom-annotations.owl</rxnormOwl>
+
+        <dataStoreLocation>${project.basedir}/../target</dataStoreLocation>
+        <dataStore>solor</dataStore>
+
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>dev.ikm.maven.tinkar</groupId>
+                    <artifactId>tinkar-maven-plugin</artifactId>
+                    <version>${maven-artifacts.version}</version>
+                </plugin>
+                <!-- Skip Staging Plugin -->
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <inherited>false</inherited>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

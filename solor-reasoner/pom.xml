@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dev.ikm.tinkar.data</groupId>
+        <artifactId>SOLOR</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>solor-reasoner</artifactId>
+    <packaging>pom</packaging>
+
+    <name>solor-reasoner</name>
+    <url>http://maven.apache.org</url>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>dev.ikm.maven.tinkar</groupId>
+                <artifactId>tinkar-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>owl-transform</id>
+                        <goals>
+                            <goal>run-owl-transformer</goal>
+                        </goals>
+                        <configuration>
+                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
+                            <isolate>false</isolate>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>run-reasoner</id>
+                        <goals>
+                            <goal>run-full-reasoner</goal>
+                        </goals>
+                        <configuration>
+                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
+                            <reasonerType>${reasoner-type}</reasonerType>
+                            <isolate>false</isolate>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
