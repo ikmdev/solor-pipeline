@@ -254,7 +254,7 @@
                 <version>1.0.0-SNAPSHOT</version>
                 <configuration>
                     <namespaceString>${rxnorm.origin.namespace}</namespaceString>
-                    <rxnormOwl>${rxnormOwl}</rxnormOwl>
+                    <rxnormOwl>${project.build.directory}/rxnorm/src/${rxnormOwl}</rxnormOwl>
                     <datastorePath>${dataStoreLocation}/${dataStore}</datastorePath>
                     <inputDirectoryPath>${user.home}/.m2/repository/dev/ikm/rxnorm/rxnorm-origin/${project.version}/rxnorm-origin-${project.version}-data.zip</inputDirectoryPath>
                     <dataOutputPath>${project.build.directory}/rxnorm</dataOutputPath>

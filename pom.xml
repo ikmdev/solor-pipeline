@@ -39,7 +39,7 @@
 
         <starterSetLocation>${user.home}/Downloads</starterSetLocation>
         <rxnorm.starterSet>RxNorm Starter Export 07072025.zip</rxnorm.starterSet>
-        <rxnormOwl>${user.home}/Downloads/Pilot-Defined-RxNorm-with-SNCT-classes-2024-04-10-with-custom-annotations.owl</rxnormOwl>
+        <rxnormOwl>Pilot-Defined-RxNorm-with-SNCT-classes-2024-04-10-with-custom-annotations.owl</rxnormOwl>
 
         <gudid.starterSet>GUDID_StarterData_1-52.zip</gudid.starterSet>
         <gudid.changeSet>GUDID_SD_Incremental_20250723.zip</gudid.changeSet>
