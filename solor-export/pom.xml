@@ -17,7 +17,7 @@
 
     <properties>
         <data-artifact.groupId>dev.ikm.tinkar.data</data-artifact.groupId>
-        <data-artifact.artifactId>SOLOR</data-artifact.artifactId>
+        <data-artifact.artifactId>SOLOR-GUDID</data-artifact.artifactId>
         <data-artifact.filename>${data-artifact.path-prefix}</data-artifact.filename>
         <data-artifact.version>20250827</data-artifact.version>
         <data-artifact.prefix>${project.artifactId}-${project.version}</data-artifact.prefix>

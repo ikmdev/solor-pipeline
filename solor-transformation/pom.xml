@@ -108,9 +108,60 @@
                         </goals>
                         <configuration>
                             <fileset>
-                                <directory>${rxnorm.starterSetLocation}</directory>
+                                <directory>${starterSetLocation}</directory>
                                 <includes>
                                     <include>**/${rxnorm.starterSet}</include>
+                                </includes>
+                            </fileset>
+                            <isolate>false</isolate>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>load-data-gudid-starter-set</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>load-data</goal>
+                        </goals>
+                        <configuration>
+                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
+                            <fileset>
+                                <directory>${starterSetLocation}</directory>
+                                <includes>
+                                    <include>**/${gudid.starterSet}</include>
+                                </includes>
+                            </fileset>
+                            <isolate>false</isolate>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>load-data-gudid-change-set</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>load-data</goal>
+                        </goals>
+                        <configuration>
+                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
+                            <fileset>
+                                <directory>${starterSetLocation}</directory>
+                                <includes>
+                                    <include>**/${gudid.changeSet}</include>
+                                </includes>
+                            </fileset>
+                            <isolate>false</isolate>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>load-data-dex-starter-set</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>load-data</goal>
+                        </goals>
+                        <configuration>
+                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
+                            <fileset>
+                                <directory>${starterSetLocation}</directory>
+                                <includes>
+                                    <include>**/${dex.starterSet}</include>
                                 </includes>
                             </fileset>
                             <isolate>false</isolate>
@@ -218,7 +269,50 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- GUDID -->
+            <plugin>
+                <groupId>dev.ikm.gudid</groupId>
+                <artifactId>gudid-transformation-maven-plugin</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <configuration>
+                    <namespaceString>${gudid.origin.namespace}</namespaceString>
+                    <datastorePath>${dataStoreLocation}/${dataStore}</datastorePath>
+                    <inputDirectoryPath>${user.home}/.m2/repository/dev/ikm/gudid/gudid-origin/${project.version}/gudid-origin-${project.version}-data.zip</inputDirectoryPath>
+                    <dataOutputPath>${project.build.directory}/gudid</dataOutputPath>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>run-gudid-transformation</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run-gudid-transformation</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Specify medical specialty codes to INCLUDE in transformation -->
+                            <medicalSpecialties>
+                                <medicalSpecialty>${gudid.medicalSpecialtyFlag}</medicalSpecialty>
+                                <medicalSpecialty>CV</medicalSpecialty>
+                                <medicalSpecialty>CH</medicalSpecialty>
+                                <medicalSpecialty>TX</medicalSpecialty>
+                                <medicalSpecialty>HE</medicalSpecialty>
+                                <medicalSpecialty>IM</medicalSpecialty>
+                                <medicalSpecialty>MI</medicalSpecialty>
+                                <medicalSpecialty>PA</medicalSpecialty>
+                            </medicalSpecialties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>dev.ikm.tinkar</groupId>
+            <artifactId>terms</artifactId>
+            <version>${tinkar-core.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

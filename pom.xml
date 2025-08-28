@@ -21,6 +21,7 @@
         <!-- maven plugins -->
         <maven-artifacts.version>1.35.0</maven-artifacts.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+        <tinkar-core.version>1.121.0</tinkar-core.version>
 
         <!-- starter data -->
         <tinkar-starter-data.groupId>dev.ikm.data.tinkar</tinkar-starter-data.groupId>
@@ -34,11 +35,18 @@
         <snomed.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</snomed.origin.namespace>
         <loinc.origin.namespace>7b880c4c-8e54-5625-863c-c8504fa78243</loinc.origin.namespace>
         <rxnorm.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</rxnorm.origin.namespace>
+        <gudid.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</gudid.origin.namespace>
 
-        <!-- TODO RxNorm data should be packaged in origin zip -->
-        <rxnorm.starterSetLocation>${user.home}/Downloads</rxnorm.starterSetLocation>
+        <starterSetLocation>${user.home}/Downloads</starterSetLocation>
         <rxnorm.starterSet>RxNorm Starter Export 07072025.zip</rxnorm.starterSet>
         <rxnormOwl>${user.home}/Downloads/Pilot-Defined-RxNorm-with-SNCT-classes-2024-04-10-with-custom-annotations.owl</rxnormOwl>
+
+        <gudid.starterSet>GUDID_StarterData_1-52.zip</gudid.starterSet>
+        <gudid.changeSet>GUDID_SD_Incremental_20250723.zip</gudid.changeSet>
+        <!-- Override to ALL for full GUDID -->
+        <gudid.medicalSpecialtyFlag>subset</gudid.medicalSpecialtyFlag>
+
+        <dex.starterSet>DeX_Starter_Data_20250827.zip</dex.starterSet>
 
         <dataStoreLocation>${project.basedir}/../target</dataStoreLocation>
         <dataStore>solor</dataStore>
