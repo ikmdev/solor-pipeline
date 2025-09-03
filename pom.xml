@@ -27,7 +27,7 @@
         <tinkar-starter-data.groupId>dev.ikm.data.tinkar</tinkar-starter-data.groupId>
         <tinkar-starter-data.artifactId>tinkar-starter-data</tinkar-starter-data.artifactId>
         <tinkar-starter-data.classifier>unreasoned-pb</tinkar-starter-data.classifier>
-        <tinkar-starter-data.version>20250813</tinkar-starter-data.version>
+        <tinkar-starter-data.version>20250827</tinkar-starter-data.version>
         <!-- reasoner options (ElkOwlReasoner, ElkSnomedReasoner, HybridReasoner)-->
         <reasoner-type>ElkSnomedReasoner</reasoner-type>
 
@@ -46,7 +46,9 @@
         <!-- Override to ALL for full GUDID -->
         <gudid.medicalSpecialtyFlag>subset</gudid.medicalSpecialtyFlag>
 
-        <dex.starterSet>DeX_Starter_Data_20250827.zip</dex.starterSet>
+        <snomed.starterSet>GMDN Starter Set.zip</snomed.starterSet>
+
+        <dex.starterSet>DeX_Starter_Data_2025_09_03.zip</dex.starterSet>
 
         <dataStoreLocation>${project.basedir}/../target</dataStoreLocation>
         <dataStore>solor</dataStore>

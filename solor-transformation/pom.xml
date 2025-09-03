@@ -151,6 +151,23 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>load-data-snomed-gmdn-starter-set</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>load-data</goal>
+                        </goals>
+                        <configuration>
+                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
+                            <fileset>
+                                <directory>${starterSetLocation}</directory>
+                                <includes>
+                                    <include>**/${snomed.starterSet}</include>
+                                </includes>
+                            </fileset>
+                            <isolate>false</isolate>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>load-data-dex-starter-set</id>
                         <phase>install</phase>
                         <goals>
