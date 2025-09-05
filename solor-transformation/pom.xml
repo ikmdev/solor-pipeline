@@ -101,84 +101,16 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>load-rxnorm-starter-data</id>
+                        <id>load-terminology-starter-data</id>
                         <phase>install</phase>
                         <goals>
                             <goal>load-data</goal>
                         </goals>
                         <configuration>
                             <fileset>
-                                <directory>${starterSetLocation}</directory>
+                                <directory>${maven.multiModuleProjectDirectory}/starter-data</directory>
                                 <includes>
-                                    <include>**/${rxnorm.starterSet}</include>
-                                </includes>
-                            </fileset>
-                            <isolate>false</isolate>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>load-data-gudid-starter-set</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>load-data</goal>
-                        </goals>
-                        <configuration>
-                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
-                            <fileset>
-                                <directory>${starterSetLocation}</directory>
-                                <includes>
-                                    <include>**/${gudid.starterSet}</include>
-                                </includes>
-                            </fileset>
-                            <isolate>false</isolate>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>load-data-gudid-change-set</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>load-data</goal>
-                        </goals>
-                        <configuration>
-                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
-                            <fileset>
-                                <directory>${starterSetLocation}</directory>
-                                <includes>
-                                    <include>**/${gudid.changeSet}</include>
-                                </includes>
-                            </fileset>
-                            <isolate>false</isolate>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>load-data-snomed-gmdn-starter-set</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>load-data</goal>
-                        </goals>
-                        <configuration>
-                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
-                            <fileset>
-                                <directory>${starterSetLocation}</directory>
-                                <includes>
-                                    <include>**/${snomed.starterSet}</include>
-                                </includes>
-                            </fileset>
-                            <isolate>false</isolate>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>load-data-dex-starter-set</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>load-data</goal>
-                        </goals>
-                        <configuration>
-                            <dataStore>${dataStoreLocation}/${dataStore}</dataStore>
-                            <fileset>
-                                <directory>${starterSetLocation}</directory>
-                                <includes>
-                                    <include>**/${dex.starterSet}</include>
+                                    <include>*.zip</include>
                                 </includes>
                             </fileset>
                             <isolate>false</isolate>
@@ -320,7 +252,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 

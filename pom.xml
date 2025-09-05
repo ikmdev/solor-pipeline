@@ -37,18 +37,10 @@
         <rxnorm.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</rxnorm.origin.namespace>
         <gudid.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</gudid.origin.namespace>
 
-        <starterSetLocation>${user.home}/Downloads</starterSetLocation>
-        <rxnorm.starterSet>RxNorm Starter Export 07072025.zip</rxnorm.starterSet>
         <rxnormOwl>Pilot-Defined-RxNorm-with-SNCT-classes-2024-04-10-with-custom-annotations.owl</rxnormOwl>
 
-        <gudid.starterSet>GUDID_StarterData_1-52.zip</gudid.starterSet>
-        <gudid.changeSet>GUDID_SD_Incremental_20250723.zip</gudid.changeSet>
         <!-- Override to ALL for full GUDID -->
         <gudid.medicalSpecialtyFlag>subset</gudid.medicalSpecialtyFlag>
-
-        <snomed.starterSet>GMDN Starter Set.zip</snomed.starterSet>
-
-        <dex.starterSet>DeX_Starter_Data_2025_09_03.zip</dex.starterSet>
 
         <dataStoreLocation>${project.basedir}/../target</dataStoreLocation>
         <dataStore>solor</dataStore>
