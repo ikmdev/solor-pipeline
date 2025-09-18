@@ -19,18 +19,18 @@
         <data-artifact.groupId>dev.ikm.tinkar.data</data-artifact.groupId>
         <data-artifact.artifactId>SOLOR-GUDID</data-artifact.artifactId>
         <data-artifact.filename>${data-artifact.path-prefix}</data-artifact.filename>
-        <data-artifact.version>20250827</data-artifact.version>
+        <data-artifact.version>${tinkar-starter-data.version}</data-artifact.version>
         <data-artifact.prefix>${project.artifactId}-${project.version}</data-artifact.prefix>
         <data-artifact.path-prefix>${project.build.directory}/${data-artifact.prefix}</data-artifact.path-prefix>
-        <deployNexusURL>https://nexus.tinkarbuild.com/repository/private-assets/</deployNexusURL>
+        <deployNexusURL>https://nexus.tinkar.org/repository/private-assets/</deployNexusURL>
         <deployToNexus>false</deployToNexus>
     </properties>
 
     <!-- Distribution info for private assets repo in Nexus -->
     <distributionManagement>
         <repository>
-            <id>nexus</id>
-            <name>private-assets-nexus</name>
+            <id>tinkar-private-assets</id>
+            <name>tinkar-private-assets</name>
             <url>${deployNexusURL}</url>
         </repository>
     </distributionManagement>
@@ -150,7 +150,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <repositoryId>nexus</repositoryId>
+                                    <repositoryId>tinkar-private-assets</repositoryId>
                                     <url>${deployNexusURL}</url>
                                     <groupId>${data-artifact.groupId}</groupId>
                                     <artifactId>${data-artifact.artifactId}</artifactId>
@@ -168,7 +168,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <repositoryId>nexus</repositoryId>
+                                    <repositoryId>tinkar-private-assets</repositoryId>
                                     <url>${deployNexusURL}</url>
                                     <groupId>${data-artifact.groupId}</groupId>
                                     <artifactId>${data-artifact.artifactId}</artifactId>
