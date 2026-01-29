@@ -72,6 +72,47 @@
                             </artifactItems>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>copy-origin-data-dependencies</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${dataStoreLocation}/origin-data</outputDirectory>
+                            <stripVersion>true</stripVersion>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>dev.ikm.data.snomedct</groupId>
+                                    <artifactId>snomedct-origin</artifactId>
+                                    <version>${snomed-origin.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>dev.ikm.data.loinc</groupId>
+                                    <artifactId>loinc-origin</artifactId>
+                                    <version>${loinc-origin.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>dev.ikm.data.rxnorm</groupId>
+                                    <artifactId>rxnorm-origin</artifactId>
+                                    <version>${rxnorm-origin.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>dev.ikm.data.gudid</groupId>
+                                    <artifactId>gudid-origin</artifactId>
+                                    <version>${gudid-origin.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <!-- Starter Data -->
@@ -144,7 +185,7 @@
                 <configuration>
                     <namespaceString>${snomed.origin.namespace}</namespaceString>
                     <datastorePath>${dataStoreLocation}/${dataStore}</datastorePath>
-                    <inputDirectoryPath>${user.home}/.m2/repository/dev/ikm/snomedct/snomed-ct-origin/${project.version}/snomed-ct-origin-${project.version}-data.zip</inputDirectoryPath>
+                    <inputDirectoryPath>${dataStoreLocation}/origin-data/snomedct-origin.zip</inputDirectoryPath>
                     <dataOutputPath>${project.build.directory}/snomed</dataOutputPath>
                 </configuration>
                 <executions>
@@ -183,7 +224,7 @@
                 <configuration>
                     <namespaceString>${loinc.origin.namespace}</namespaceString>
                     <datastorePath>${dataStoreLocation}/${dataStore}</datastorePath>
-                    <inputDirectoryPath>${user.home}/.m2/repository/dev/ikm/loinc/loinc-origin/${project.version}/loinc-origin-${project.version}-data.zip</inputDirectoryPath>
+                    <inputDirectoryPath>${dataStoreLocation}/origin-data/loinc-origin.zip</inputDirectoryPath>
                     <dataOutputPath>${project.build.directory}/loinc</dataOutputPath>
                 </configuration>
                 <executions>
@@ -205,7 +246,7 @@
                     <namespaceString>${rxnorm.origin.namespace}</namespaceString>
                     <rxnormOwl>${project.build.directory}/rxnorm/src/${rxnormOwl}</rxnormOwl>
                     <datastorePath>${dataStoreLocation}/${dataStore}</datastorePath>
-                    <inputDirectoryPath>${user.home}/.m2/repository/dev/ikm/rxnorm/rxnorm-origin/${project.version}/rxnorm-origin-${project.version}-data.zip</inputDirectoryPath>
+                    <inputDirectoryPath>${dataStoreLocation}/origin-data/rxnorm-origin.zip</inputDirectoryPath>
                     <dataOutputPath>${project.build.directory}/rxnorm</dataOutputPath>
                 </configuration>
                 <executions>
@@ -226,7 +267,7 @@
                 <configuration>
                     <namespaceString>${gudid.origin.namespace}</namespaceString>
                     <datastorePath>${dataStoreLocation}/${dataStore}</datastorePath>
-                    <inputDirectoryPath>${user.home}/.m2/repository/dev/ikm/gudid/gudid-origin/${project.version}/gudid-origin-${project.version}-data.zip</inputDirectoryPath>
+                    <inputDirectoryPath>${dataStoreLocation}/origin-data/gudid-origin.zip</inputDirectoryPath>
                     <dataOutputPath>${project.build.directory}/gudid</dataOutputPath>
                 </configuration>
                 <executions>

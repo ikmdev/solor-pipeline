@@ -37,6 +37,11 @@
         <rxnorm.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</rxnorm.origin.namespace>
         <gudid.origin.namespace>3094dbd1-60cf-44a6-92e3-0bb32ca4d3de</gudid.origin.namespace>
 
+        <snomed-origin.version>snomedct-international-20250801T120000Z+1.0.0-SNAPSHOT</snomed-origin.version>
+        <loinc-origin.version>loinc-2.81+1.0.0-SNAPSHOT</loinc-origin.version>
+        <rxnorm-origin.version>rxnorm-2024-04-10+1.0.0-SNAPSHOT</rxnorm-origin.version>
+        <gudid-origin.version>gudid-20250804+1.0.0-SNAPSHOT</gudid-origin.version>
+
         <rxnormOwl>Pilot-Defined-RxNorm-with-SNCT-classes-2024-04-10-with-custom-annotations.owl</rxnormOwl>
 
         <!-- Override to ALL for full GUDID -->
